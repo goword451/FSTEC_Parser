@@ -25,9 +25,14 @@ namespace FSTEC
         {
             switch (e.Column.Header.ToString())
             {
+
                 case "DisplayedId":
                     e.Column.Header = "Идентификатор УБИ";
                     e.Column.Width = DataGridLength.SizeToHeader;
+                    break;
+                case "Name":
+                    e.Column.Header = "Наименование УБИ";
+                    e.Column.Width = 650;
                     break;
                 default:
                     e.Cancel = true;
@@ -45,10 +50,6 @@ namespace FSTEC
             Settings.Default.WindowState = this.WindowState;
             Settings.Default.Save();
         }
-        private void ListButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.ListContainter.Visibility = (ListContainter.Visibility == Visibility.Visible) ? Visibility.Collapsed : Visibility.Visible;
-            this.ListButton.Content = (ListContainter.Visibility == Visibility.Collapsed) ? "Показать список" : "Скрыть список";
-        }
+        
     }
 }

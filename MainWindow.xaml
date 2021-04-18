@@ -71,7 +71,6 @@
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="1" Style="{StaticResource ListButton}" Name="ListButton" Grid.Column="1" Click="ListButton_Click" Content="Скрыть список"/>
             <ScrollViewer Grid.ColumnSpan="2">
                 <Grid Name="Detail" Grid.Row="0">
                     <Grid.RowDefinitions>
@@ -117,15 +116,24 @@
             <Grid Grid.Row="2" Grid.ColumnSpan="2" Name="ListContainter" Background="#FFF4F4F4">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
-                    <RowDefinition/>
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Left" Orientation="Vertical" Height="110" Grid.Row="1">
+                    <Button Content="Последняя страница" Style="{StaticResource PageButton}" Command="{Binding LastPage}"/>
+                    <Button Content="Следующая страница" Style="{StaticResource PageButton}" Command="{Binding NextPageCommand}"/>
+                    <TextBlock Name="SaveStatus" Text="{Binding Page, Mode=OneWay}" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <Button Content="Предыдущая страница" Style="{StaticResource PageButton}" Command="{Binding PreviousPageCommand}"/>
+                    <Button Content="Первая страница" Style="{StaticResource PageButton}" Command="{Binding FirstPage}"/>
+                </StackPanel>
                 <DataGrid Background="#FFFAFAFA" 
                           CanUserDeleteRows="False" 
                           CanUserAddRows="False" 
                           Grid.Row="0" 
-                          HorizontalScrollBarVisibility="Disabled" 
+                          HorizontalScrollBarVisibility="Visible" 
                           BorderBrush="#FFF0F0F0" 
-                          MaxHeight="325" 
+                          Height="400" 
                           IsReadOnly="True" 
                           Name="DataGridMain" 
                           AutoGeneratingColumn="DataGridMain_AutoGeneratingColumn" 
@@ -133,17 +141,10 @@
                           HorizontalGridLinesBrush="#FFAAAAAA" 
                           Width="Auto" 
                           SelectionMode="Single" 
-                          Grid.ColumnSpan="4" 
                           ItemsSource="{Binding PageDangers, Mode=OneWay}"
                           CanUserSortColumns="False"
-                          VerticalScrollBarVisibility="Visible"/>
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="25" Grid.Row="1">
-                    <Button Content="Первая страница" Style="{StaticResource PageButton}" Command="{Binding FirstPage}"/>
-                    <Button Content="Предыдущая страница" Style="{StaticResource PageButton}" Command="{Binding PreviousPageCommand}"/>
-                    <TextBlock Name="SaveStatus" Text="{Binding Page, Mode=OneWay}" FontWeight="Bold" VerticalAlignment="Center"/>
-                    <Button Content="Следующая страница" Style="{StaticResource PageButton}" Command="{Binding NextPageCommand}"/>
-                    <Button Content="Последняя страница" Style="{StaticResource PageButton}" Command="{Binding LastPage}"/>
-                </StackPanel>
+                          VerticalScrollBarVisibility="Visible"
+                          HorizontalAlignment ="Right"/>
             </Grid>
         </Grid>
     </DockPanel>
