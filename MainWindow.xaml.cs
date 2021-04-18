@@ -1,28 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OfficeOpenXml;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using FSTEC.Properties;
+using FSTEC.View;
 
 namespace FSTEC
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             InitializeComponent();
+            InitializeMainWindowSettings();
+        }
+        private void InitializeMainWindowSettings()
+        {
+            this.Width = Settings.Default.Width;
+            this.Height = Settings.Default.Height;
+            this.WindowState = Settings.Default.WindowState;
+        }
+        private void DataGridMain_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.Column.Header.ToString())
+            {
+                case "DisplayedId":
+                    e.Column.Header = "Идентификатор УБИ";
+                    e.Column.Width = DataGridLength.SizeToHeader;
+                    break;
+                default:
+                    e.Cancel = true;
+                    break;
+            }
+        }
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Settings.Default.Height = this.Height;
+            Settings.Default.Width = this.Width;
+            Settings.Default.Save();
+        }
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            Settings.Default.WindowState = this.WindowState;
+            Settings.Default.Save();
+        }
+        private void ListButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.ListContainter.Visibility = (ListContainter.Visibility == Visibility.Visible) ? Visibility.Collapsed : Visibility.Visible;
+            this.ListButton.Content = (ListContainter.Visibility == Visibility.Collapsed) ? "Показать список" : "Скрыть список";
         }
     }
 }

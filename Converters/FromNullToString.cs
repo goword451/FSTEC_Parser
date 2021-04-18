@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace FSTEC
+namespace FSTEC.Converters
 {
-    class FromNullToString : IValueConverter
+    public class FromNullToString : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

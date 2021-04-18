@@ -1,5 +1,5 @@
 ﻿
-namespace FSTEC
+namespace FSTEC.Objects
 {
     public class DisplayedDanger
     {

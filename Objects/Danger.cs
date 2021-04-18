@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 
-namespace FSTEC
+namespace FSTEC.Objects
 {
     public class Danger
     {

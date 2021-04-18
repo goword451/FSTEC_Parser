@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace FSTEC
+namespace FSTEC.Converters
 {
-    class FromBoolToString : IValueConverter
+    public class FromBoolToString : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -15,7 +15,7 @@ namespace FSTEC
             else
             {
                 return "Нет";
-            }
+            };
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

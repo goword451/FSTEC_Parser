@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FSTEC
+
+namespace FSTEC.Objects
 {
     public class Update
     {
@@ -18,18 +16,6 @@ namespace FSTEC
             Param = param;
             Old = old;
             Recent = recent;
-        }
-
-        private static string FromBoolToStringConverter(bool b)
-        {
-            if (b == true)
-            {
-                return "Да";
-            }
-            else
-            {
-                return "Нет";
-            }
         }
 
         private static List<Update> GetUpdatesBetweenNewLast(Danger lastDanger, Danger newDanger)
@@ -61,6 +47,18 @@ namespace FSTEC
                 updates = updates.Union(GetUpdatesBetweenNewLast(danger, tempDanger)).ToList();
             }
             return updates;
+        }
+
+        private static string FromBoolToStringConverter(bool b)
+        {
+            if (b == true)
+            {
+                return "Да";
+            }
+            else
+            {
+                return "Нет";
+            }
         }
 
     }

@@ -2,13 +2,13 @@
 using System.Net.NetworkInformation;
 using FSTEC.Properties;
 
-namespace FSTEC
+namespace FSTEC.Objects
 {
     class Network
     {
         internal static bool CheckInternetConnection()
         {
-            try { return new Ping().Send("google.com").Status == IPStatus.Success ? true : false; }
+            try { return new Ping().Send("vk.com").Status == IPStatus.Success ? true : false; }
             catch { return false; }
         }
         internal static void DownloadFile()

@@ -24794,20 +24794,20 @@
             Base class containing cell address manipulating methods.
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.ExcelCellBase.SplitCellID(System.UInt64,System.Int32@,System.Int32@,System.Int32@)">
+        <member name="M:OfficeOpenXml.ExcelCellBase.SplitCellId(System.UInt64,System.Int32@,System.Int32@,System.Int32@)">
             <summary>
             Get the sheet, row and column from the CellID
             </summary>
-            <param name="cellID"></param>
+            <param name="cellId"></param>
             <param name="sheet"></param>
             <param name="row"></param>
             <param name="col"></param>
         </member>
-        <member name="M:OfficeOpenXml.ExcelCellBase.GetCellID(System.Int32,System.Int32,System.Int32)">
+        <member name="M:OfficeOpenXml.ExcelCellBase.GetCellId(System.Int32,System.Int32,System.Int32)">
             <summary>
             Get the cellID for the cell. 
             </summary>
-            <param name="SheetID"></param>
+            <param name="sheetId"></param>
             <param name="row"></param>
             <param name="col"></param>
             <returns></returns>
@@ -31125,6 +31125,15 @@
             <param name="row"></param>
             <param name="col"></param>
             <returns></returns>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.ExcelDataProvider.GetCellId(System.String,System.Int32,System.Int32)">
+            <summary>
+            Creates a cell id, representing the full address of a cell.
+            </summary>
+            <param name="sheetName">Name of the worksheet</param>
+            <param name="row">Row ix</param>
+            <param name="col">Column Index</param>
+            <returns>An <see cref="T:System.UInt64"/> representing the addrss</returns>
         </member>
         <member name="M:OfficeOpenXml.FormulaParsing.ExcelDataProvider.GetDimensionEnd(System.String)">
             <summary>

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.ObjectModel;
 
-namespace FSTEC
+namespace FSTEC.Objects
 {
     public class DisplayedDangers
     {

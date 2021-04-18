@@ -25,7 +25,7 @@ namespace FSTEC.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("800")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1024")]
         public double Width {
             get {
                 return ((double)(this["Width"]));
@@ -37,7 +37,7 @@ namespace FSTEC.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("600")]
+        [global::System.Configuration.DefaultSettingValueAttribute("720")]
         public double Height {
             get {
                 return ((double)(this["Height"]));
@@ -53,15 +53,6 @@ namespace FSTEC.Properties {
         public string WebFilePath {
             get {
                 return ((string)(this["WebFilePath"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
-        public int DangersOnPage {
-            get {
-                return ((int)(this["DangersOnPage"]));
             }
         }
         
@@ -97,10 +88,19 @@ namespace FSTEC.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("lib/local")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\gowor\\source\\repos\\FSTECInf\\FSTEC\\bin\\Debug\\result\\thrlist.xlsx")]
         public string LocalFilePath {
             get {
                 return ((string)(this["LocalFilePath"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        public int DangersOnPage {
+            get {
+                return ((int)(this["DangersOnPage"]));
             }
         }
     }
